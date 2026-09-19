@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "DAÜ Mezuniyet Planlayıcı",
+  "version": "0.2.1",
+  "description": "Güncel DAÜ Not Dökümü sayfasından mezuniyet ilerlemesini ve alınabilir dersleri hesaplar.",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_title": "DAÜ Mezuniyet Planlayıcı",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://student.emu.edu.tr/Academic/RecordSheet*"],
+      "js": ["lib/curriculum.js", "lib/engine.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
